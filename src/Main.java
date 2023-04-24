@@ -7,17 +7,22 @@ public class Main {
         List<Persona> list_persona = new ArrayList<>();
         //asignación todo el listado de la clase persona.
 
-        Persona persona = new Persona();
-        persona.setCodigo(1);
-        persona.setNombre("Juan Carlos");
-        persona.setApellido("Javier Maguiña");
-        persona.setEdad(25);
+        for(int i=1;i<=10;i++){
+            Persona persona = new Persona();
+            persona.setCodigo(i);
+            persona.setNombre("Juan Carlos "+i);
+            persona.setApellido("Javier Maguiña "+i);
+            persona.setEdad(25+i);
+            list_persona.add(persona);
+        }
+        System.out.println("Tamaño de lista: " + list_persona.size());
 
-        list_persona.add(persona);
-        System.out.println("Datos lista: \n" +
-                "\nCódigo: "+list_persona.get(0).getCodigo()+
-                "\nNombre: "+list_persona.get(0).getNombre()+
-                "\nApellido: "+list_persona.get(0).getApellido()+
-                "\nEdad: "+list_persona.get(0).getEdad());
+        for(Persona p:list_persona){
+            System.out.println("Datos lista: \n" +
+                    "\nCódigo: "+p.getCodigo()+
+                    "\nNombre: "+p.getNombre()+
+                    "\nApellido: "+p.getApellido()+
+                    "\nEdad: "+p.getEdad());
+        }
     }
 }
